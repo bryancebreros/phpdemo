@@ -1,3 +1,7 @@
+html {
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     color: #000;
@@ -9,6 +13,17 @@ li {
 .card-list {
     list-style: none;
     color: #000;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.card {
+    background-color: rgb(229, 224, 245);
+    width: 45%;
+    margin: 40px 0;
+    padding: 1rem;
+
 }
 h2 {
     font-size: 4rem;
@@ -17,11 +32,14 @@ h2 {
 .tag-pills{
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
+
 }
 .pill {
     border-radius: 15px;
     margin: 0 0.7rem;
     padding: 0.5rem;
-    background-color: rgb(71, 71, 255);
-    color: #000;
+    
+    background-color: rgb(4, 4, 53);
+    color: #fff;
 }

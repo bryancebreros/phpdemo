@@ -401,42 +401,32 @@
           ]; 
         
     ?>
-    <ul class="card-list">
-        <li>
-          <h2 class="name">Jasmine</h2>
-          <h3 class="age">Age: <?php echo 2023 - 1964 ?></h3>
-          <img src="https://source.unsplash.com/random" style="width: 164px; height: 164px" alt="">
-          <p class="bio">Jasmine is a random person with a random biography.</p>
-          <ul class="tag-pills">
-            <span class="pill">id</span>
-            <span class="pill">culpa</span>
-            <span class="pill">amet</span>
-          </ul>
-        </li>
+    <div class="card-list">
         <?php
             function calculate($birthday) {
                 return 2023 - $birthday;
             }
             foreach ($array as $element){
-                echo  "<h2 class='name'>$element[name]</h2>";
-                $age = calculate($element['year']);
-                echo "<h3 class='age'>Ages:  $age</h3>";
-                echo "<img src='$element[picture]' style='width: 164px; height: 164px'>";
-                echo "<p class='bio'>$element[biography]</p>";
-                $tag = $element['tags'];
-                echo "<ul class='tag-pills'><span class='pill'>$tag[0]</span><span class='pill'>$tag[1]</span><span class='pill'>$tag[2]</span></ul>";
+              $age = calculate($element['year']);
+              $tag = $element['tags'];
+            
+              ?>
+              <div class="card">
+                <h2 class="name"><?php echo $element['name']; ?></h2>
+                <h3 class="age">Age: <?php echo $age; ?></h3>
+                <img 
+                  src="<?php echo $element['picture']; ?>" 
+                  style='width: 164px; height: 164px'>
+                <p class="bio"><?php echo $element['biography']; ?></p>
+                <ul class="tag-pills">
+                  <li class="pill"><?php echo $tag[0] ?></li>
+                  <li class="pill"><?php echo $tag[1] ?></li>
+                  <li class="pill"><?php echo $tag[2] ?></li>
+                </ul>
+              </div>
+              <?php
             }
         ?>
-
-        </li>
-        
-    </ul>
-
-    <?php
-    
-
-    
-
-    ?>
+      </div>
 </body>
 </html>
